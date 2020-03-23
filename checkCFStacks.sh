@@ -2,3 +2,5 @@ allstacks=$(aws --profile dev cloudformation list-stacks --stack-status-filter C
 for stack in $allstacks; do
     aws --profile dev cloudformation list-stack-resources --stack-name ${stack} --query "StackResourceSummaries[?ResourceType == 'AWS::DynamoDB::Table'].PhysicalResourceId"
 done
+
+### Test comment ###
